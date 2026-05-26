@@ -1,20 +1,22 @@
 import type { Metadata } from "next";
-import { Fraunces, Manrope } from "next/font/google";
+import { Bebas_Neue, Space_Mono } from "next/font/google";
 import "./globals.css";
 
-const headingFont = Fraunces({
-  variable: "--font-fraunces",
+const headingFont = Bebas_Neue({
+  variable: "--font-heading",
   subsets: ["latin"],
+  weight: ["400"],
 });
 
-const bodyFont = Manrope({
-  variable: "--font-manrope",
+const bodyFont = Space_Mono({
+  variable: "--font-body",
   subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "PLGuesser",
-  description: "Terenowa gra zgadywania lokalizacji na Kampusie A PŁ.",
+  title: "PŁGuesser",
+  description: "Terenowa gra zgadywania lokalizacji na Kampusach Politechniki Łódzkiej",
 };
 
 export default function RootLayout({

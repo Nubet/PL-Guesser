@@ -9,8 +9,20 @@ import {
   subscribeToStoredSessionChanges,
 } from "@/features/game/infrastructure/session-storage";
 
+let cachedRawSession: GameSession | null = null;
+let cachedNormalizedSession: GameSession | null = null;
+
 export function getGameSessionSnapshot(): GameSession | null {
-  return normalizeSession(getStoredSessionSnapshotCached());
+  const rawSession = getStoredSessionSnapshotCached();
+  
+  if (rawSession === cachedRawSession) {
+    return cachedNormalizedSession;
+  }
+  
+  cachedRawSession = rawSession;
+  cachedNormalizedSession = normalizeSession(rawSession);
+  
+  return cachedNormalizedSession;
 }
 
 export function subscribeToGameSession(onChange: () => void): () => void {

@@ -4,30 +4,32 @@ type StartScreenProps = {
 
 export function StartScreen({ onStart }: StartScreenProps) {
   return (
-    <section className="hero-surface relative overflow-hidden rounded-3xl border border-border/60 p-10 shadow-[0_30px_70px_color-mix(in_oklab,var(--color-brand)_24%,transparent)]">
-      <div className="pointer-events-none absolute -left-12 -top-12 size-44 rounded-full border border-brand/20" />
-      <div className="pointer-events-none absolute -bottom-16 right-4 size-56 rounded-full border border-accent/25" />
-
-      <p className="text-brand/80 text-sm font-semibold uppercase tracking-[0.35em]">
-        Lodz University of Technology
-      </p>
-      <h1 className="text-brand mt-5 max-w-2xl text-4xl font-semibold leading-tight md:text-6xl">
-        PLGuesser
+    <section className="ui-card relative mx-auto mt-12 flex max-w-3xl flex-col items-center justify-center p-10 text-center md:mt-24 md:p-16">
+      <div className="ui-badge absolute -top-5">
+        KAMPUS A
+      </div>
+      
+      <h1 className="mt-4 font-heading text-5xl md:text-7xl">
+        PŁ<span className="text-brand">Guesser</span>
       </h1>
-      <p className="mt-5 max-w-xl text-lg leading-8 text-foreground/90">
-        Rozpoznaj miejsce na Kampusie A po jednym zdjęciu. Kliknij punkt na mapie,
-        traf jak najbliżej i zdobądź maksymalnie 5000 punktów za rundę.
+      
+      <p className="mx-auto mt-8 max-w-lg text-lg font-sans text-foreground">
+        Rozpoznaj miejsce po jednym zdjęciu. Kliknij punkt na mapie,
+        traf jak najbliżej i zdobądź do 5000 punktów w każdej z 5 rund!
       </p>
 
-      <div className="mt-10 flex flex-wrap items-center gap-5">
+      <div className="mt-12 flex flex-col items-center justify-center gap-5">
         <button
           type="button"
           onClick={onStart}
-          className="bg-accent hover:bg-accent-hover rounded-full px-8 py-4 text-base font-semibold text-white transition hover:-translate-y-0.5"
+          className="ui-button ui-button-primary px-10 py-4"
         >
-          Rozpocznij na Kampusie A
+          ZAGRAJ TERAZ
+          <svg className="ml-2 h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
         </button>
-        <p className="text-sm text-foreground/75">5 rund - zapis sesji do zamknięcia karty</p>
+        <p className="mt-2 text-sm font-sans uppercase tracking-wider text-foreground/50 border-2 border-foreground/10 px-4 py-2">5 RUND • ZAPIS SESJI</p>
       </div>
     </section>
   );
