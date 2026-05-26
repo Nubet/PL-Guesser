@@ -1,26 +1,52 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f3eee5;
+  --foreground: #1c2e45;
+  --color-brand: #0d3b66;
+  --color-brand-hover: #102f52;
+  --color-accent: #f26419;
+  --color-accent-hover: #d95511;
+  --color-surface: #fffdf9;
+  --color-surface-muted: #eaf0f7;
+  --color-border: #cfd9e6;
+  --color-ring: #99b4d3;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-brand: var(--color-brand);
+  --color-brand-hover: var(--color-brand-hover);
+  --color-accent: var(--color-accent);
+  --color-accent-hover: var(--color-accent-hover);
+  --color-surface: var(--color-surface);
+  --color-surface-muted: var(--color-surface-muted);
+  --color-border: var(--color-border);
+  --color-ring: var(--color-ring);
+  --font-sans: var(--font-manrope);
+  --font-serif: var(--font-fraunces);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-manrope), sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-fraunces), serif;
+}
+
+.hero-surface {
+  background-image:
+    radial-gradient(circle at 12% 8%, color-mix(in oklab, var(--color-accent) 28%, transparent), transparent 38%),
+    radial-gradient(circle at 88% 82%, color-mix(in oklab, var(--color-brand) 26%, transparent), transparent 42%),
+    linear-gradient(140deg, color-mix(in oklab, var(--color-surface) 92%, white), var(--color-surface));
+}
+
+.panel-shadow {
+  box-shadow: 0 20px 40px color-mix(in oklab, var(--color-brand) 16%, transparent);
 }
