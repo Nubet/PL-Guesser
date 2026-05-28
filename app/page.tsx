@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { GraduationCap, Library, Globe, User, Briefcase, Terminal, Code2, ExternalLink, MapPin } from "lucide-react";
+
 
 export default function Home() {
   return (
@@ -14,7 +16,7 @@ export default function Home() {
               <p className="text-xl md:text-2xl font-sans text-foreground mb-8">
                 Przewodnik i gra terenowa dla studentów Politechniki Łódzkiej. Poznaj Kampusy, zanim zgubisz się w drodze na zajęcia.
               </p>
-              
+
               <Link
                 href="/game"
                 className="ui-button ui-button-primary w-full px-10 py-4 text-2xl md:w-auto"
@@ -25,16 +27,16 @@ export default function Home() {
                 </svg>
               </Link>
             </div>
-            
+
             <div className="hidden md:flex flex-col gap-4 text-center">
-               <div className="ui-card rotate-3 bg-brand p-6 text-surface">
-                  <h3 className="text-3xl font-heading">5 Rund</h3>
-                  <p className="font-sans">Odkryj tajemnice kampusu</p>
-               </div>
-               <div className="ui-card -rotate-2 bg-surface p-6 text-foreground">
-                  <h3 className="text-3xl font-heading">25 000 pkt</h3>
-                  <p className="font-sans">Maksymalny wynik do zdobycia</p>
-               </div>
+              <div className="ui-card rotate-3 bg-brand p-6 text-surface">
+                <h3 className="text-3xl font-heading">5 Rund</h3>
+                <p className="font-sans">Odkryj tajemnice kampusu</p>
+              </div>
+              <div className="ui-card -rotate-2 bg-surface p-6 text-foreground">
+                <h3 className="text-3xl font-heading">25 000 pkt</h3>
+                <p className="font-sans">Maksymalny wynik do zdobycia</p>
+              </div>
             </div>
           </div>
         </section>
@@ -43,7 +45,7 @@ export default function Home() {
           <h2 className="font-heading text-4xl md:text-6xl mb-10 text-foreground bg-surface inline-block border-4 border-border px-6 py-2 shadow-[4px_4px_0px_0px_var(--color-border)]">
             Poradnik Studenta
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <article className="ui-card bg-surface p-8">
               <h3 className="font-heading text-3xl mb-4 text-brand">Pierwsze Obowiązki</h3>
@@ -62,7 +64,7 @@ export default function Home() {
             <article className="ui-card bg-surface p-8">
               <h3 className="font-heading text-3xl mb-4 text-brand">Kluczowe Miejsca</h3>
               <p className="font-sans text-lg text-foreground">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque non tortor id tellus dapibus tempus ut eu elit. Fusce imperdiet erat at varius aliquet. Praesent quis fringilla nibh. Phasellus eros orci, dignissim id metus vitae, mattis egestas urna. Proin est nibh, molestie a mattis sed, dapibus sed ipsum.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque non tortor id tellus dapibus tempus ut eu elit. Fusce imperdiet erat at varius aliquet. Praesent quis fringilla nibh. Phasellus eros orci, dignissim id metus vitae, mattis egestas urna. Proin est nibh, molestie a mattis sed, dapibus sed ipsum.
               </p>
             </article>
 
@@ -77,31 +79,47 @@ export default function Home() {
 
       </main>
 
-      <footer className="w-full bg-border text-surface mt-auto py-12 border-t-8 border-foreground">
-        <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
-            <h4 className="font-heading text-3xl mb-4">PŁGuesser</h4>
-            <p className="font-sans text-lg opacity-80">
-              Edukacyjna gra miejska ułatwiająca nowym studentom odnalezienie się na Kampusie A Politechniki Łódzkiej.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-heading text-3xl mb-4">Przydatne linki</h4>
-            <ul className="font-sans text-lg flex flex-col gap-2">
-              <li><a href="#" className="hover:underline hover:text-brand">Webdziekanat</a></li>
-              <li><a href="#" className="hover:underline hover:text-brand">WIKAMP</a></li>
-              <li><a href="#" className="hover:underline hover:text-brand">Biblioteka PŁ</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-heading text-3xl mb-4">Autor</h4>
-            <p className="font-sans text-lg opacity-80 mb-2">
-              Norbert Fila
-            </p>
+      <footer className="w-full bg-surface text-foreground mt-auto border-t-4 border-border">
+        <div className="max-w-5xl mx-auto px-6 py-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+            <div className="md:col-span-2 lg:col-span-2 flex flex-col items-start">
+              <Link href="/" className="font-heading text-5xl font-black uppercase mb-4 inline-block hover:text-brand transition-colors">
+                PŁ<span className="text-brand">Guesser</span>
+              </Link>
+              <p className="font-sans text-base font-bold max-w-sm">
+                Edukacyjna gra miejska ułatwiająca nowym studentom odnalezienie się na Kampusie A Politechniki Łódzkiej.
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-4 font-sans font-bold">
+              <h4 className="font-heading text-2xl uppercase tracking-widest mb-2 opacity-50">Rozgrywka</h4>
+              <Link href="/ranking" className="w-fit hover:bg-brand hover:text-surface px-1 -ml-1 transition-colors">Ranking</Link>
+              <Link href="/zasady" className="w-fit hover:bg-brand hover:text-surface px-1 -ml-1 transition-colors">Zasady gry</Link>
+              <Link href="/osiagniecia" className="w-fit hover:bg-brand hover:text-surface px-1 -ml-1 transition-colors">Osiągnięcia</Link>
+            </div>
+
+            <div className="flex flex-col gap-4 font-sans font-bold">
+              <h4 className="font-heading text-2xl uppercase tracking-widest mb-2 opacity-50">Przydatne linki</h4>
+              <a href="https://webdziekanat.p.lodz.pl/" target="_blank" rel="noopener noreferrer" className="w-fit hover:bg-brand hover:text-surface px-1 -ml-1 transition-colors">Webdziekanat</a>
+              <a href="https://edu.p.lodz.pl/" target="_blank" rel="noopener noreferrer" className="w-fit hover:bg-brand hover:text-surface px-1 -ml-1 transition-colors">WIKAMP</a>
+              <a href="https://csllal.ent.sirsidynix.net.uk/client/pl_PL/bpl/#" target="_blank" rel="noopener noreferrer" className="w-fit hover:bg-brand hover:text-surface px-1 -ml-1 transition-colors">Biblioteka PŁ</a>
+            </div>
+
+            <div className="flex flex-col gap-4 font-sans font-bold">
+              <h4 className="font-heading text-2xl uppercase tracking-widest mb-2 opacity-50">Autor</h4>
+              <Link href="/o-projekcie" className="w-fit hover:bg-brand hover:text-surface px-1 -ml-1 transition-colors">O projekcie</Link>
+              <a href="https://github.com/Nubet/PL-Guesser" target="_blank" rel="noopener noreferrer" className="w-fit hover:bg-brand hover:text-surface px-1 -ml-1 transition-colors">Kod źródłowy</a>
+            </div>
           </div>
         </div>
-        <div className="max-w-5xl mx-auto px-6 mt-12 pt-8 border-t-2 border-surface/20 text-center font-sans">
-          &copy; {new Date().getFullYear()} PŁGuesser. Wszystkie prawa zastrzeżone.
+
+        <div className="border-t-4 border-border bg-border text-surface py-6">
+          <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 font-sans text-sm font-bold">
+            <p>© {new Date().getFullYear()} PŁGuesser.</p>
+            <div className="flex items-center gap-6">
+              <a href="https://norbertfila.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand transition-colors">Norbert Fila</a>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
